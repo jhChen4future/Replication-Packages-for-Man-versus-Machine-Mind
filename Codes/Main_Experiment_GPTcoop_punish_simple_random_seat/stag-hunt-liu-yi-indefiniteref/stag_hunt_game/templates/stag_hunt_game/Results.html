@@ -1,0 +1,48 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+
+<p>
+
+
+
+{% if player.role == 'Hunter_1' %}
+
+    You choose to <strong><span style="size: 24pt; color: red "><b>{{player.decision}}</b></span></strong>
+    and the other player choose to
+    <strong><i><span style="size: 24pt; color: green">{{player.other_player.decision}}</span></i></strong> so your payoff is
+    <strong><span style="size: 24pt; color: red "><b>{{player.payoff}}</b></span></strong> and the other player's payoff is
+    <strong><i><span style="size: 24pt; color: green">{{player.other_player.payoff}}</span></i></strong>
+    and your cumulative payoff is <strong><span style="size: 24pt; color: red "><b>{{participant.payoff}}</b></span></strong>.
+
+{% else %}
+
+    You choose to <strong><i><span style="size: 24pt; color: green">{{player.decision}}</span></i></strong> and the other player choose tp
+    <strong><span style="size: 24pt; color: red "><b>{{player.other_player.decision}}</b></span></strong> so your payoff is
+    <strong><i><span style="size: 24pt; color: green">{{player.payoff}}</span></i></strong> and the other player's payoff is
+    <strong><span style="size: 24pt; color: red "><b>{{player.other_player.payoff}}</b></span></strong> and your cumulative payoff is
+    <strong><i><span style="size: 24pt; color: green">{{participant.payoff}}</span></i></strong>.
+
+{% endif %}
+
+
+</p>
+
+{% if player.decision == 'stag' and player.other_player.decision == 'stag' %}
+    <img src="{% static "stag_hunt_game/happy.jpg" %}" alt="Image" height="200" width="200" />
+
+{% else %}
+    <img src="{% static "stag_hunt_game/sad.png" %}" alt="Image" height="200" width="200" />
+{% endif %}
+
+    {% next_button %}
+
+    {% include Constants.instructions_template %}
+
+{% endblock %}
+

@@ -1,0 +1,37 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Result
+{% endblock %}
+
+{% block content %}
+<font size="+1.5">
+    <p>
+        {% if player.randomrole == 'Proposer' %}
+        You are chosen as the <span style="color:red"><strong>proposer</strong></span> by the system.<br>
+            <br>You chose to offer your partner <strong>{{ player.amount_offered }}</strong> .
+            {% if group.offer_accepted %}
+                Congratulations, your offer has been <strong>ACCEPTED</strong>.
+            {% else %}
+                Unfortunately, your offer has been  <strong>rejected</strong>.
+            {% endif %}
+        {% else %}
+        You are  chosen as the <span style="color:red"><strong>responder</strong></span> by the system.<br>
+            Your partner offered you <strong>{{ group.amount_offered }}</strong> out of {{ Constants.endowment }}.
+            {% if group.offer_accepted %}
+                As a result, you chose to <strong>accept</strong> it.
+            {% else %}
+                As a result, you chose to <strong>reject</strong> it.
+            {% endif %}
+        {% endif %}
+
+    </p>
+
+    <p>
+        Thus, your payoff for this part is: <span style="color:red"><strong>{{ player.payoff }}</strong></span>. You can write down your earnings for this part on the payment table
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

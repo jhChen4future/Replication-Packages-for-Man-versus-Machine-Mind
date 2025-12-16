@@ -1,0 +1,69 @@
+{% load otree %}
+
+<div class="card bg-light m-3">
+    <font size="+2">
+    <div class="card-body">
+
+    <h3>
+        Instructions
+    </h3>
+
+    <script>
+        setTimeout(
+            function () {
+                alert("You have been on this page for 2 minutes now. If you have any further questions, please raise your hand to ask the observer. Otherwise, you can click the next button to proceed.");
+            },
+            120*1000 // 120 seconds
+        );
+    </script>
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'global/matrix.css' %}"/>
+
+    <p>
+        In this study, you will be randomly and anonymously paired with another
+        participant. Your pair will remain together throughout the entire experiment. You will be randomly assigned a role at the beginning of the experiment as either Hunter 1 or Hunter 2, and the role
+        remains the same for the entire experiment. Your role will be assigned after you click next button.
+        <br>
+        <br>The experiment consists at least 5 rounds, with <i>45%</i> chance having an additional round after round 5, but no more than 10 rounds.
+        Each of you simultaneously and privately chooses whether you want to
+        hunt stags or hunt hares in each round. Below is an example of the matrix you will encounter throughout the experiment.
+        <br>
+        <br>You only have <span style="color:red"><i><b>20 seconds</b></i></span> to make your choice in each round. If you do not make a choice by 20 seconds, the system will choose to hunt stag for you.
+        <br>
+        <br>For your convenience, everything in the matrix associates with Hunter 1 will be in red and Hunter 2 will be in green in this experiment.
+        Your payoffs will be determined by the choices of both as below:
+    </p>
+    <p>
+        <i>Each cell stands for a payoff corresponding to the interaction. For example, the cell in first column of first row stands for the payoff if Hunter 1 chooses to hunt stag and Hunter 2 chooses to hunt stag.
+            In each cell, the amount to the left is Hunter 1's payoff and the amount to the right is Hunter 2's payoff.
+        <span style="color: blue;"><b>where X=2 for the first three rounds and X=3 for the rest of the experiment. We will remind you when X changes.</b></span></i>
+    </p>
+
+
+        <table class='table table-bordered text-center'
+            style='width: auto; margin: auto'>
+            <tr>
+                <th colspan=2 rowspan=2></th>
+                <th colspan=2>Hunter 2</th>
+            </tr>
+            <tr>
+                <th>Stag</th>
+                <th>Hare</th>
+            </tr>
+            <tr>
+                <th rowspan=2><span style="transform: rotate(-90deg);">Hunter 1</span></th>
+                <th>Stag</th>
+                <td>4, 4</td>
+                <td>0, <span style="color: blue;"><b><i>X</i></b></span></td>
+            </tr>
+            <tr>
+                <th>Hare</th>
+                <td>1, 0</td>
+                <td>1, <span style="color: blue;"><b><i>X</i></b></span></td>
+            </tr>
+        </table>
+
+
+</div>
+</div>

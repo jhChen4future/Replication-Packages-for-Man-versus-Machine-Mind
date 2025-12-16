@@ -1,0 +1,72 @@
+{% extends 'otree/WaitPage.html' %}
+{% load otree %}
+{% block title %}Please wait for your partner to make a choice{% endblock %}
+
+{% block content %}
+<font size="+2">
+{% if player.role == "Hunter 1" %}
+    <p> You are <span style="color: red;"><b>{{ player.role }}</b></span>. You chose to hunt<span style="color: red"><b>{{ player.decision }}</b> </span></p>
+    <div class="form-group required">
+            <table class="table table-bordered text-center" style="width: auto; margin: auto">
+                <tr>
+                    <th colspan="2" rowspan="2"></th>
+                    <th colspan="2"><i><span style="color: green;">Your Partner</span> </i></th>
+                </tr>
+                <tr>
+                    <th>Stag</th>
+                    <th>Hare</th>
+                </tr>
+                <tr>
+                    <th rowspan="2"><span style="color: red "><b>You</b></span></th>
+                    <td><button name="decision" value="Stag" class="btn btn-primary btn-large" disabled>Hunt Stag</button></td>
+                    <td><span style="color: red "><b>4</b></span>,
+                    <i><span style="color: green">4</span></i></td>
+                    <td><span style="color: red "><b>0</b></span>,
+                    <i><span style="color: green">{{group.hare_p2_payoff}}</span></i></td>
+                </tr>
+                <tr>
+                    <td><button name="decision" value="Hare" class="btn btn-primary btn-large" disabled>Hunt Hare</button></td>
+                    <td><span style="color: red "><b>1</b></span>,
+                    <i><span style="color: green">0</span></i></td>
+                    <td><span style="color: red "><b>1</b></span>,
+                    <i><span style="color: green">{{group.hare_p2_payoff}}</span></i></td>
+                    </tr>
+            </table>
+    </div>
+
+{% else %}
+    <p> You are <span style="color: green;"><i>{{ player.role }}</i></span>. You chose to hunt <span style="color:green"><i>{{ player.decision }}</i> </span></p>
+        <div class="form-group required">
+            <table class="table table-bordered text-center" style="width: auto; margin: auto">
+                <tr>
+                    <th colspan="2" rowspan="2"></th>
+                    <th colspan="2"><i><span style="color: green;">You</span> </i></th>
+                </tr>
+                <tr>
+                    <td><button name="decision" value="Stag" class="btn btn-primary btn-large" disabled>Hunt Stag</button></td>
+                    <td><button name="decision" value="Hare" class="btn btn-primary btn-large" disabled>Hunt Hare</button></td>
+                </tr>
+                <tr>
+                    <th rowspan="2"><span style="color: red "><b>Your Partner</b></span></th>
+                    <th>Stag</th>
+                    <td><span style="color: red "><b>4</b></span>,
+                    <i><span style="color: green">4</span></i></td>
+                    <td><span style="color: red "><b>0</b></span>,
+                    <i><span style="color: green">{{group.hare_p2_payoff}}</span></i></td>
+                </tr>
+                <tr>
+                    <th>Hare</th>
+                    <td><span style="color: red "><b>1</b></span>,
+                    <i><span style="color: green">0</span></i></td>
+                    <td><span style="color: red "><b>1</b></span>,
+                    <i><span style="color: green">{{group.hare_p2_payoff}}</span></i></td>
+                    </tr>
+            </table>
+        </div>
+{% endif %}
+
+
+
+
+
+{% endblock %}

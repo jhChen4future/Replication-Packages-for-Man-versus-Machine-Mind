@@ -1,0 +1,18 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Wartezeit
+{% endblock %}
+
+{% block content %}
+<style>.otree-timer{display:TRUE;}</style>
+<p>
+
+    <strong>In der Testphase ist der "Weiter"-Button natürlich noch freigeschaltet</strong>
+
+</p>
+
+    {% next_button %}
+{% endblock %}
+

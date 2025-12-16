@@ -1,0 +1,26 @@
+{{ block title }}小组投入结果展示{{ endblock }}
+{{ block content }}
+  <p>
+        下面展示了小组内各个玩家的投入。除您的投入以外，展示顺序按照本轮投入由多到少排列。
+    </p>
+
+
+<table class="table"> 
+    <tr>
+        <td>玩家投入</td>
+    </tr>
+        <tr>
+            <td>{{ player.contribution }}(你的投入)</td>
+        </tr>
+    {{ for p in other_players }}
+        <tr>
+            <td>{{ p.contribution }}</td>
+        </tr>
+    {{endfor }}
+</table>
+
+
+
+    {{ next_button }}
+
+{{ endblock }}

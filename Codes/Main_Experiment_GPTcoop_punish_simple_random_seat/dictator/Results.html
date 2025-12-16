@@ -1,0 +1,19 @@
+{{ extends 'global/Page.html' }}
+{{ block title }}结果{{ endblock }}
+
+{{ block content }}
+
+<p>
+
+    {{ if player.id_in_group == 1 }}
+        您决定为自己保留<strong>{{ group.kept }}数</strong>，所以，您在本游戏的收入为<b>{{group.kept}}</b>数。
+    {{ else }}
+        角色1决定保留<strong>{{ group.kept }}数</strong>,
+        因此您获得<strong>{{ offer }}</strong>数，所以，您在本游戏的收入为<b>{{offer}}</b>点数。
+    {{ endif }}
+
+    {{ next_button }}
+</p>
+
+
+{{ endblock }}

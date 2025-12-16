@@ -1,0 +1,90 @@
+{{ block styles }}
+<link href="{{ static 'bret/css/custom.css' }}" rel="stylesheet"/>
+{{ endblock }}
+
+
+{{ block title }}
+{{ Lexicon.instructions }}
+{{ endblock }}
+
+{{ block content }}
+
+<div class="instructions">
+{{ if de }}
+        <p>
+            Nachfolgend sehen sie eine {{ C.NUM_ROWS }}x{{ C.NUM_COLS }}-Matrix, die {{ C.NUM_BOXES }} Boxen beinhaltet.
+        </p>
+
+        <p>
+            Sobald Sie die Aufgabe durch Klicken des 'Start' Buttons beginnen, wird eine
+            Box pro Sekunde - beginnend in der oberen linken Ecke - gesammelt. Bereits
+            gesammelte Boxen werden mit einem Häkchen markiert. Für jede gesammelte Box
+            erhalten Sie {{ C.BOX_VALUE }}.
+
+        </p>
+
+        <p>
+            Hinter einer der Boxen ist eine Bombe versteckt, die alles zerstört, was
+    bisher eingesammelt wurde. Die verbleibenden {{ num_nobomb }} Boxen sind
+    jeweils {{ C.BOX_VALUE }} wert. Sie wissen nicht hinter welcher Box die Bombe
+    versteckt ist. Sie wissen nur, dass sich die Bombe in einer beliebigen Box
+    mit gleicher Wahrscheinlichkeit befindet.
+
+        </p>
+        <p>
+            Ihre Aufgabe besteht darin, den Sammelprozess zu beenden. Dies geschieht
+    durch einen Klick auf den Button 'Stop' zu jeder beliebigen Zeit. Wenn Sie
+    die Box einsammeln, in der sich die Bombe befindet, wird die Bombe
+    explodieren und ihre Auszahlung beträgt null. Wenn Sie die Aufgabe beenden
+    ohne die Bombe einzusammeln erhalten Sie den bis dahin gesammelten Betrag.
+
+        </p>
+        <p>
+            Nachdem Sie die Aufgabe mit 'Stop' beendet haben, können die Boxen durch
+    einen Klick auf den Button 'Auflösen' umgedreht werden. Ein Dollarzeichen
+    oder ein Feuersymbol (für die Bombe) wird auf jeder von Ihnen gesammelten
+    Box angezeigt.
+
+    </p>
+{{ else }}
+        <p>
+	    在接下来的页面中，您将看到{{C.NUM_ROWS}}*{{C.NUM_COLS}}-matrix_containing
+	    {{C.NUM_BOXES}}盒子。
+        </p>
+
+        {{ if C.RANDOM }}
+        <p>
+            当你点击"Start"按钮后，游戏六即开始。
+            屏幕上的盒子每{{ C.TIME_INTERVAL }}秒将被随机收集一个。
+            一旦一个盒子被收集，这个盒子将会被标记。
+            您每收集一个盒子，您将获得{{ C.BOX_VALUE }}点数的收入。
+        </p>
+        {{ else }}
+        <p>
+	   当你点击"Start"按钮后，游戏六即开始。
+           屏幕上的盒子每{{ C.TIME_INTERVAL }}秒会被收集一个，从最左上角的第一个盒子开始收集。
+           一旦一个盒子被收集，这个盒子将会被标记。
+           您每收集一个盒子，您将获得{{ C.BOX_VALUE }}点数的收入。
+        </p>
+        {{ endif }}
+
+         <p>
+            在其中一个盒子后面藏着一个炸弹，炸弹会摧毁已经收集的所有东西。
+            除了这个盒子外其他的{{ num_nobomb }} 个盒子各值{{ C.BOX_VALUE }}点数。
+            您不知道炸弹藏在哪个盒子后面。
+            您只知道定时炸弹以相同概率出现在盒子里。
+        </p>
+        <p>
+	    本轮游戏中您的任务就是选择什么时候停止收集盒子。通过任意时刻点击"Stop"来停止收集盒子。
+	    如果您收集到带有炸弹的盒子，炸弹会爆炸，随之您本游戏的收入为0。
+            如果您在收集到带有炸弹的盒子前停止收集，即会获得本游戏中已获得的收益。
+        </p>
+        <p>
+            在决定结束收集盒子后，请点击"Solve"按钮。
+            每个收集到的任务箱上都会显示一个美元符号（代表收益）或一个火苗符号（代表炸弹）。
+        </p>
+{{ endif }}
+</div>
+
+{{ next_button }}
+{{ endblock }}

@@ -1,0 +1,16 @@
+{{ extends 'global/Page.html' }}
+{{ block title }}您的选择{{ endblock }}
+
+ {{ block content }}
+<p>
+请选择您的身份。
+</p>
+<p>
+如果您是在实验室中参与游戏的玩家，请选择<b>[Human]</b>。
+</p>
+<p>
+如果您是ChatGPT玩家，请选择<b>[ChatGPT]</b>
+</p>
+{{formfields}} 
+{{ next_button }} 
+{{ endblock }}

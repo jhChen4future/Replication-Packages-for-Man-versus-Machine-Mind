@@ -1,0 +1,27 @@
+
+<div class="card bg-light m-3">
+<div class="card-body">
+    <h3>
+        游戏四说明
+    </h3>
+
+<p>
+欢迎来到游戏四。您将与 {{Constants.players_per_group}}名玩家随机匿名匹配，组成本游戏的一个固定小组。
+</p>
+
+<p>
+游戏开始时，您将获得{{Constants.endowment}}初始点数。您可以选择保留这{{Constants.endowment}}数，或者将{{Constants.endowment}}数中的任意部分（整数）投入到小组公共账户。
+</p>
+<p>
+投入到小组账户的点数将被乘以{{Constants.multiplier}}计入公共账户，每轮结束小组公共账户中的点数总额将平分给小组内的每个玩家。
+</p>
+
+<p>
+如果每个人都保留全部的初始点数（对小组公共账户的贡献点数为0），所有人本轮最终获得{{Constants.endowment}}数。 
+</p>
+
+<p>
+如果每个人将全部的初始点数投入给小组公共账户，所有人最终会获得{{Constants.endowment}}数 * {{Constants.multiplier}} *{{Constants.players_per_group}} / {{Constants.players_per_group}} = {{Constants.max_payoff}}数</p>
+
+</div>
+</div>

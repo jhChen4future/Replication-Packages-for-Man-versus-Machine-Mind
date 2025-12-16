@@ -1,0 +1,48 @@
+
+<div class="card bg-light m-3">
+    <div class="card-body">
+
+    <h3>
+        游戏说明
+    </h3>
+
+    <link rel="stylesheet" type="text/css"
+          href="{{ static 'global/matrix.css' }}"/>
+
+    <p>
+	在本游戏中，您将与一名陌生玩家随机匹配，游戏的总轮数是随机决定的，在每轮游戏结束后，有75%的概率进入到下一轮游戏。
+	举个例子，若您结束第二轮游戏，则进入第三轮游戏的概率为75%。进入下一轮游戏的概率与您的决策完全无关。
+<p/>
+<p>
+	在每轮游戏中，两个玩家需要在选项A和选项B中独立做出选择。
+	两人将同时做出选择：在做出选择前，玩家间不会观测到另外一位玩家的选择。
+	玩家的决策与收入对应情况如下所示：
+    </p>
+    <p><i>在每个单元格中，左边的数字代表您的收入，
+	右边的数字代表另一位玩家的收入。</i></p>
+
+    <table class='table table-bordered text-center'
+           style='width: auto; margin: auto'>
+        <tr>
+            <th colspan=2 rowspan=2></th>
+            <th colspan=2>对方的选择</th>
+        </tr>
+        <tr>
+            <th>选择A</th>
+            <th>选择B</th>
+        </tr>
+        <tr>
+            <th rowspan=2><span style="transform: rotate(-90deg);">您</span></th>
+            <th>选择A</th>
+            <td>{{ Constants.both_cooperate_payoff }}, {{ Constants.both_cooperate_payoff }}</td>
+            <td>0, {{ Constants.betray_payoff }}</td>
+        </tr>
+        <tr>
+            <th>选择B</th>
+            <td>{{ Constants.betray_payoff }}, 0</td>
+            <td>{{ Constants.both_defect_payoff }}, {{ Constants.both_defect_payoff }}</td>
+        </tr>
+    </table>
+
+</div>
+</div>

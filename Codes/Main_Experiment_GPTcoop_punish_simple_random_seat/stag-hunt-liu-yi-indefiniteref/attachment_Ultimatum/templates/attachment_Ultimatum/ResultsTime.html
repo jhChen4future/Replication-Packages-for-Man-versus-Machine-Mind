@@ -1,0 +1,37 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+    <p>
+        {% if player.randomrole == 'Proposer' %}
+            Du bist Proposer <br>
+            Ihr habt {{ Constants.endowmenttime }} Minuten zum Aufteilen bekommen, von diesem Betrag hast du deinem Mitspieler {{ player.amount_offeredtime }} Minuten angeboten.
+            {% if group.offer_acceptedtime %}
+                Dein Angebot wurde angenommen.
+            {% else %}
+                Dein Angebot wurde abgelehnt.
+            {% endif %}
+        {% else %}
+            Du bist der Responder <br>
+            Der andere Spieler hat dir {{ group.amount_offeredtime }} Minuten aus der Summe der Wartezeit {{ Constants.endowmenttime }} Minuten angeboten.
+            {% if group.offer_acceptedtime %}
+                Du hast das Angebot angenommen.
+            {% else %}
+                Du hast das Angebot abgelehnt.
+            {% endif %}
+        {% endif %}
+
+    </p>
+
+    <p>
+        Du musst {{ player.payofftime }} Minuten warten.
+    </p>
+
+    {% next_button %}
+
+
+{% endblock %}

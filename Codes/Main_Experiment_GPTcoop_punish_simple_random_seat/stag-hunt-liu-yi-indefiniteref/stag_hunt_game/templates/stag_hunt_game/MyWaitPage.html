@@ -1,0 +1,71 @@
+{% extends 'otree/WaitPage.html' %}
+{% load otree %}
+{% block title %}Please wait!{% endblock %}
+
+{% block content %}
+<p><span style="size: 24pt"> You are <strong>{{ player.role }}</strong>. What is the choice that you want to make? </span></p>
+    <div class="form-group required">
+        {% if player.role == "Hunter_1" %}
+            <table class="table table-bordered text-center" style="width: auto; margin: auto">
+                <tr>
+                    <th colspan="2" rowspan="2"></th>
+                    <th colspan="2"><i><span style="size: 24pt; color: green">The Other Participant(Hunter 2)</span> </i></th>
+                </tr>
+                <tr>
+                    <th><i><span style="size: 24pt; color: green">stag</span></i></th>
+                    <th><i><span style="size: 24pt; color: green">hare</span></i></th>
+                </tr>
+                <tr>
+                    <th rowspan="2"><span style="size: 24pt; color: red "><b>You (Hunter 1)</b></span></th>
+                    <th><span style="size: 24pt; color: red "><b>stag</b></span></th>
+                    <td><span style="size: 24pt; color: red "><b>{{Constants.stag_match_payoff}}</b></span>,
+                    <i><span style="size: 24pt; color: green">{{Constants.stag_match_payoff}}</span></i></td>
+                    <td><span style="size: 24pt; color: red "><b>{{ Constants.stag_mismatch_payoff }}</b></span>,
+                    <i><span style="size: 24pt; color: green">{{group.h_2_hare_payoff}}</span></i></td>
+                </tr>
+                <tr>
+                    <th><span style="size: 24pt; color: red "><b>hare</b></span></th>
+                    <td><span style="size: 24pt; color: red "><b>{{Constants.h_1_hare_payoff}}</b></span>,
+                    <i><span style="size: 24pt; color: green">{{ Constants.stag_mismatch_payoff }}</span></i></td>
+                    <td><span style="size: 24pt; color: red "><b>{{Constants.h_1_hare_payoff}}</b></span>,
+                    <i><span style="size: 24pt; color: green">{{group.h_2_hare_payoff}}</span></i></td>
+                    </tr>
+            </table>
+
+    {% else %}
+            <table class="table table-bordered text-center" style="width: auto; margin: auto">
+                <tr>
+                    <th colspan="2" rowspan="2"></th>
+                    <th colspan="2"><span style="size: 24pt; color: red "><b>The Other Participant</b></span></th>
+                </tr>
+                <tr>
+                    <th><span style="size: 24pt; color: red "><b>stag</b></span></th>
+                    <th><span style="size: 24pt; color: red "><b>hare</b></span></th>
+                </tr>
+                <tr>
+                    <th rowspan="2"><span style="size: 24pt; color: green "><i>You (Hunter 2)</i></span></th>
+                    <th><i><span style="size: 24pt; color: green">stag</span></i></th>
+                    <td><i><span style="size: 24pt; color: green">{{Constants.stag_match_payoff}}</span></i>,
+                    <span style="size: 24pt; color: red "><b>{{Constants.stag_match_payoff}}</b><span</td>
+                    <td><i><span style="size: 24pt; color: green">{{ Constants.stag_mismatch_payoff }}</span></i>,
+                    <span style="size: 24pt; color: red "><b>{{Constants.h_1_hare_payoff}}</b></span></td>
+                </tr>
+                <tr>
+                     <th><i><span style="size: 24pt; color: green">hare</span></i></th>
+                     <td><i><span style="size: 24pt; color: green">{{group.h_2_hare_payoff}}</span></i>,
+                    <span style="size: 24pt; color: red "><b>{{ Constants.stag_mismatch_payoff }}</b></span></td>
+                    <td><i><span style="size: 24pt; color: green">{{group.h_2_hare_payoff}}</span></i>,
+                    <span style="size: 24pt; color: red "><b>{{Constants.h_1_hare_payoff}}</b></span></td>
+                </tr>
+            </table>
+
+    {% endif %}
+
+
+    </div>
+
+
+
+
+{% endblock %}
+

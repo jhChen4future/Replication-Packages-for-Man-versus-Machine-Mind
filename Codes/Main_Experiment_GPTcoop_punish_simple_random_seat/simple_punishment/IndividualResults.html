@@ -1,0 +1,49 @@
+{{ block title }}小组投入结果展示{{ endblock }}
+{{ block content }}
+    <p>
+        下面展示了小组内所有玩家的投入。展示顺序将随机打乱，按照身份ChatGPT、人类的顺序显示。
+    </p>
+
+
+<table class="table"> 
+	<tr>
+	    <td>玩家身份</td>
+	    <td>玩家投入</td>
+	</tr>
+    {{ if player.label1 == 'ChatGPT' }}
+        <tr>
+            <td>{{ player.label1 }}</td>
+            <td>{{ player.contribution }}</td>
+        </tr>
+    {{ endif }}
+    {{ for p in other_players }}
+            {{ if p.label1 == 'ChatGPT' }}
+                <tr>
+                    <td>{{ p.label1 }}</td>
+                    <td>{{ p.contribution }}</td>
+                </tr>
+            {{ endif }}
+        {{ endfor }}
+        
+    {{ if player.label1 == 'Human' }}
+        <tr>
+            <td>{{ player.label1 }}</td>
+             <td>{{ player.contribution }}</td>
+        </tr>
+    {{ endif }}
+    {{ for p in other_players }}
+            {{ if p.label1 == 'Human' }}
+                <tr>
+                    <td>{{ p.label1 }}</td>
+                    <td>{{ p.contribution }}</td>
+                </tr>
+            {{ endif }}
+        {{ endfor }}
+
+</table>
+
+
+
+    {{ next_button }}
+
+{{ endblock }}

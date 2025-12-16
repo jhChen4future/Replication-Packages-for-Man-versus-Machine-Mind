@@ -1,0 +1,40 @@
+{{ extends 'global/Page.html' }}
+{{ block title }}结果{{ endblock }}
+
+{{ block content }}
+
+
+{{if player.id_in_group == 1}}
+<p>
+    您是提议者A。您提议从 {{Constants.endowment}} 个初始点数中拿出{{group.proposal}}个点数给对方。
+</p>
+
+<p>
+    响应者B决定{{group.response}} 您的提案.
+</p>
+
+<p>
+    您本游戏的收益为{{player.payoff}}.
+</p>
+
+
+
+{{else}}
+<p>
+    您是响应者B。对方从 {{Constants.endowment}} 个初始点数中提议给您{{group.proposal}}个点数。
+</p>
+
+<p>
+    您决定{{group.response}} 这一提议.
+</p>
+
+
+<p>
+    您本游戏的收益为{{player.payoff}}.
+</p>
+
+{{endif}}
+
+{{ next_button }}
+
+{{ endblock }}

@@ -1,0 +1,8 @@
+{{ extends 'global/Page.html' }}
+{{ block title }}您的选择{{ endblock }}
+
+ {{ block content }}
+<p> 请仔细选择您的身份。注意：AI模型必须选择"ChatGPT"。 </p> <p> 如果您是真实的人类参与者，请选择<b>[Human]</b>。 </p> <p> 如果您是AI模型（如ChatGPT）扮演的玩家，<b>必须选择[ChatGPT]</b>。 </p>
+{{formfields}} 
+{{ next_button }} 
+{{ endblock }}

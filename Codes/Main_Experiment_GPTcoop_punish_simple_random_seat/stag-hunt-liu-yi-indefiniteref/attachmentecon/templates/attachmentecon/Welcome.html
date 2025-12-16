@@ -1,0 +1,54 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+            <style>
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            margin: 0;
+            width:100%;
+            height: 100%;
+        }
+
+        #header {
+            background-color:#0c1f27;
+            color:#20b2aa;
+            text-align:center;
+            padding:15px;
+        }
+        #footer {
+            background-color:#0c1f27;
+            color:#20b2aa;
+            clear:both;
+            text-align:center;
+            padding:35px;
+        }
+
+        </style>
+    {% block content %}
+    <title>WELCOME TO THE LAB</title>
+    <div id="header">
+        <h1 style="color:#20b2aa;">Welcome To The Lab </h1>
+    </div>
+
+<body>
+        <font size="+1.5">
+         <p>Thank you for participating this experiment. You will receive $7 show up fee plus all earnings you make during the experiment. Please make sure you can stay in the lab for the
+             entire duration of the experiment. If not, please notify the experiment observers (including me)  immediately.</p>
+         <p><br>There is a pencil and a piece of paper (payment table) on the table in front of you, and these should be the sole objects on your table. Please fill out your station number on the table now. </p>
+         <p><br>For now, please remain seated and refrain from talking to other participants in the lab. Please do not use your personal electronic devices such as your cell phone. Violation of these rules may
+             result you being removed from the lab and losing the chance of receiving any payments you make. </p>
+         <p>If you have no other questions, you may click the <strong>next button</strong> below to start.</p>
+         <br>
+         <br>
+         {% next_button %}
+         <br>
+        <div id="footer">Copyright © 刘翼 LIU,YI
+        </div>
+</body>
+{% endblock %}
+</html>

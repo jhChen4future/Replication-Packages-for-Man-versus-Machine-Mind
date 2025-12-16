@@ -1,0 +1,66 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+<div class="card bg-light m-3">
+    <font size="+2">
+    <div class="card-body">
+{% block content %}
+    <h3>
+        Instructions For Part 1
+    </h3>
+    <font size="+1.5">
+    <script>
+        setTimeout(
+            function () {
+                alert("You have been on this page for 2 minutes now. If you have any further questions, please raise your hand to ask the observer. Otherwise, you can click the next button to proceed.");
+            },
+            120*1000 // 120 seconds
+        );
+    </script>
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'global/matrix.css' %}"/>
+    <br>
+    <p>
+        In this study, you will be randomly and anonymously paired with another
+        participant.
+        <br>
+        <br>The experiment consists 3 parts, and this is <span style="color:red"><i><strong>part 1</strong></i></span>. Below is an example of the matrix you will encounter in part 1.
+        <br>Once you proceed, you will have <span style="color:red"><i><b>1 minute</b></i></span> to make your decision. If you do not make a decision by the end, the system will choose to exercise <span style="color:red"><i><b>Strategy 2</b></i></span> for you.
+        <br>
+    </p>
+        <br>
+        <table class='table table-bordered text-center'
+            style='width: auto; margin: auto'>
+            <tr>
+                <th colspan=2 rowspan=2></th>
+                <th colspan=2>Your partner</th>
+            </tr>
+            <tr>
+                <th>Strategy 1</th>
+                <th>Strategy 2</th>
+            </tr>
+            <tr>
+                <th rowspan=2><span style="color:red">You</span></th>
+                <th>Strategy 1</th>
+                <td><span style="color: red "><b>$5</b></span>, <i>$5</i></td>
+                <td><span style="color: red "><b>$0</b></span>, <i>$10</i></td>
+            </tr>
+            <tr>
+                <th>Strategy 2</th>
+                <td><span style="color: red "><b>$10</b></span>, <i>$0</i></td>
+                <td><span style="color: red "><b>$2</b></span>, <i>$2</i></td>
+            </tr>
+        </table>
+        <br>
+        <center><p>How To Read the Table</p></center>
+        <p><i>Each cell stands for a payoff corresponding to the interaction.
+            For example, the cell in the first column of first row stands for the payoff if you choose to exercise Strategy 1 and your partner chooses to exercise Strategy 1.</i></p>
+            <p><i>In each cell, the amount to the left (labeled red) is your payoff and the amount to the right (italicized) is your partner's payoff.
+            If you have any questions, please ask the experiment observer, otherwise, you can click the next button below to proceed to part 1.</i></p>
+        <br>
+        {% next_button %}
+
+</div>
+</div>
+{% endblock %}

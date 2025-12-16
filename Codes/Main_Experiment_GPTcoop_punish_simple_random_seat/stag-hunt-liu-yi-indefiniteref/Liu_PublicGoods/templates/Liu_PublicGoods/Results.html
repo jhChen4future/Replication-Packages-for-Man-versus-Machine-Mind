@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Result
+{% endblock %}
+
+{% block content %}
+
+<table>
+    <tr><td>Your contribution</td><td>{{ player.contribute }}</td></tr>
+    <tr><td>Others in your group contributed:</td><td></td></tr>
+    {% for p in player.get_others_in_group %}
+    <tr><td></td><td>{{ p.contribute }}</td></tr>
+        {% endfor %}
+    <tr><td>group total</td><td>{{ group.sum }}</td></tr>
+    <tr><td>Individual Share</td><td>{{ group.individual_share }}</td></tr>
+    <tr><td>Your payoff</td><td>{{ player.payoff }}</td></tr>
+    <tr><td>Cumulative payoff</td><td>{{ participant.payoff }}</td></tr>
+
+
+</table>
+    {% next_button %}
+{% endblock %}
+
+

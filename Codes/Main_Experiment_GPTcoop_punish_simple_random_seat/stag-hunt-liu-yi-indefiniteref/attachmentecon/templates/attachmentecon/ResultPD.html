@@ -1,0 +1,27 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Result
+{% endblock %}
+
+{% block content %}
+<font size="+2">
+        <p>
+            {% if same_choice %}
+            Both of you chose to exercise <span style="color: blue "><b>{{ my_decision }}</b></span>.
+            {% else %}
+            You chose to exercise <span style="color: red "><b>{{ my_decision }}</b></span> and your partner chose to exercise <i>{{ opponent_decision }}</i>.
+            {% endif %}
+        </p>
+
+        <p>
+            As a result, you earned <span style="color: red "><b>{{ player.payoff }}</b></span> and your partner earned <i>{{player.other_player.payoff}}</i>.
+            <br> You can write down your payment for Part 1 on the payment paper on the table.
+        </p>
+
+    {% next_button %}
+
+
+{% endblock %}
+

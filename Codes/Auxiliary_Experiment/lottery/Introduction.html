@@ -1,0 +1,48 @@
+{{ extends 'global/Page.html' }}
+{{ block title }}游戏二说明{{ endblock }}
+
+{{ block content }}
+<p>你已完成游戏一的全部内容，准备进入游戏二。</p>
+<p>游戏二仅进行一轮游戏。</p>
+
+<p>
+在游戏中，你需要从下面列出的六个选项中选择一个。你可以点击你偏好的选项来进行选择。每个选项都有两个可能的结果（结果 A 或结果 B），这两个结果出现的概率是相等的。
+</p>
+
+<p>
+你可以将其想象为抛硬币：正面表示结果 A，反面表示结果 B，出现的概率各为 50%。
+</p>
+
+<p>
+在实验结束时，计算机会等概率地随机选择结果 A 或结果 B。你将获得与你所选择的选项对应的点数。
+</p>
+
+<p>六个选项的具体数值如下（游戏时也会展示）：</p>
+
+<table border="1" cellpadding="6" cellspacing="0">
+    <thead>
+        <tr>
+            <th>选项</th>
+            <th>结果 A</th>
+            <th>结果 B</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>选项1</td><td>18 点数</td><td>18 点数</td></tr>
+        <tr><td>选项2</td><td>22 点数</td><td>15 点数</td></tr>
+        <tr><td>选项3</td><td>26 点数</td><td>12 点数</td></tr>
+        <tr><td>选项4</td><td>30 点数</td><td>9 点数</td></tr>
+        <tr><td>选项5</td><td>34 点数</td><td>6 点数</td></tr>
+        <tr><td>选项6</td><td>37 点数</td><td>2 点数</td></tr>
+    </tbody>
+</table>
+
+<p>
+例如：如果你选择了选项4，当计算机选择结果 A 时你将获得 30 点数；如果选择结果 B，你将获得 9 点数。
+</p>
+
+{{ formfields }}
+
+{{ next_button }}
+
+{{ endblock }}

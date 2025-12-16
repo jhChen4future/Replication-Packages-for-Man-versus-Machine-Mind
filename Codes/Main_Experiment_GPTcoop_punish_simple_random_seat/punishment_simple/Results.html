@@ -1,0 +1,26 @@
+{{ block title }}本轮结果{{ endblock }}
+{{ block content }}
+<p>若您的收入为小数，计算机在屏幕上会显示四舍五入后的整数，但后台收入计算仍为小数</p>
+
+    <table class="table">
+        <tr>
+            <th>您的投入</th>
+            <td>{{ player.contribution }}</td>
+        </tr>
+        <tr>
+            <th>小组总投入</th>
+            <td>{{ group.total_contribution }}</td>
+        </tr>
+        <tr>
+            <th>公共账户人均收益</th>
+            <td>{{ group.individual_share }}</td>
+        </tr>
+               <tr>
+            <th>本轮最终收入</th>
+            <td>{{ player.payoff }}</td>
+        </tr>
+    </table>
+
+{{ next_button }}
+
+{{ endblock }}

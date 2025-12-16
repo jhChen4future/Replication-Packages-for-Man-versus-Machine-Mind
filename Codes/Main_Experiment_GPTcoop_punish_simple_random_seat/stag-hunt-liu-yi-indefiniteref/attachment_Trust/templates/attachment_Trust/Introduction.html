@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Instruction for Part 2
+{% endblock %}
+
+{% block content %}
+        <script>
+        setTimeout(
+            function () {
+                alert("You have been on this page for 2 minutes now. If you have any further questions, please raise your hand to ask the observer. Otherwise, you can click the next button to proceed.");
+            },
+            120*1000 // 120 seconds
+        );
+    </script>
+
+    {% include Constants.instructions_template %}
+
+    {% next_button %}
+
+{% endblock %}

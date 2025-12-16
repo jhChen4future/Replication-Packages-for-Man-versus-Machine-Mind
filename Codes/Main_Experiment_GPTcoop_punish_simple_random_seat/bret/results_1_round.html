@@ -1,0 +1,36 @@
+    {{ if de }}
+    Sie haben sich entschieden {{ boxes_collected }} von {{ C.NUM_BOXES }} Boxen zu
+    sammeln.
+    {{ else }}
+    You chose to collect {{ boxes_collected }} out of {{ C.NUM_BOXES }} boxes.
+    {{ endif }}
+
+    <br/>
+    {{ if de }}
+    Die Bombe war hinter der Box in Reihe {{ bomb_row }}, Spalte {{ bomb_col }} versteckt.
+    {{ else }}
+    炸弹藏在第{{bomb_row}}，第{{bomb_col}}列的盒子后。
+    {{ endif }}
+    <br/>
+    <br/>
+    {{ if bomb }}
+        {{ if de }}
+        Die Bombe befand sich unter den von Ihnen gesammelten {{ boxes_collected }}
+        Boxen.<br/> Entsprechend wurden alle Ihre gesammelten Erträge zerstört und
+        Ihre Auszahlung in dieser Aufgabe beträgt {{ payoff }}.
+        {{ else }}
+        炸弹藏在您已收集的{{ boxes_collected }}盒子中。<br/>
+        因此，您本轮游戏中的所有收入被摧毁，本游戏收入为{{ payoff }}.
+        {{ endif }}
+    {{ else }}
+        {{ if de }}
+        Die Bombe war nicht unter den von Ihnen eingesammelten Boxen.<br/>
+        Dementsprechend erhalten Sie {{ box_value }} für jede der {{ boxes_collected }}
+        Boxen, sodass sich Ihre Auszahlung in dieser Aufgabe auf <b>{{ payoff }}</b>
+        beläuft.
+        {{ else }}
+        您收集的盒子中不包含炸弹。<br/>
+        您共获得{{ box_value }}点数，因为收集了{{ boxes_collected }}个盒子。
+        因此您本游戏中的总收入为<b>{{ payoff }}</b>.
+        {{ endif }}
+    {{ endif }}

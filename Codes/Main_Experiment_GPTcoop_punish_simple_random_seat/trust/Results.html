@@ -1,0 +1,35 @@
+{{ extends 'global/Page.html' }}
+{{ block title }}结果{{ endblock }}
+
+{{ block content }}
+
+{{ if player.id_in_group == 1 }}
+    <p>
+	您选择给B {{group.sent_amount}}数。
+	角色B选择返还您{{group.sent_back_amount}}数。
+    </p>
+    <p>
+	您起始的点数收入为{{C.ENDOWMENT}}数，
+	选择给B{{group.sent_amount}}数，收到B返还的{{group.sent_back_amount}}数，
+	因此您本游戏的总收入为：
+	{{C.ENDOWMENT}}数-{{group.sent_amount}}数+{{group.sent_back_amount}}数=<strong>{{player.payoff}}数</strong>
+    </p>
+{{ else }}
+    <p>
+	角色A赠送给您{{group.sent_amount}}数。
+	这部分点数被乘三倍，所以您收到{{tripled_amount}}数。
+	您选择返还{{group.sent_back_amount}}数。
+    </p>
+    <p>
+	您收到{{tripled_amount}}数。
+	您选择返还{{group.sent_back_amount}}数。
+        因此您本游戏的总收入为：
+        {{ tripled_amount }}数-{{ group.sent_back_amount }}数=<strong>{{ player.payoff }}数</strong>。
+    </p>
+  
+{{ endif }}
+
+<p>{{ next_button }}</p>
+
+
+{{ endblock }}

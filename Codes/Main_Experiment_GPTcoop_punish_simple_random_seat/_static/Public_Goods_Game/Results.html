@@ -1,0 +1,24 @@
+{{ extends 'global/Page.html' }}
+{{ block title }}结果{{ endblock }}
+
+{{ block content }}
+
+
+<p>
+    开始您拥有{{Constants.endowment}}点数，随后投入小组公共账户{{player.contribution}}点数。
+</p>
+  
+<p>
+    小组中共有 {{session.num_participants}}名玩家。他们总共投入小组公共账户{{group.total_contribution}}点数。 
+    公共账户的点数中为每名玩家都产生{{group.individual_share}}点数收入。 
+</p>
+
+<p>
+    您的收入为{{player.payoff}}={{Constants.endowment}}点数-您投入小组公共账户的{{player.contribution}}点数+小组公共账户总点数的回报{{group.individual_share}}点数。
+</p>
+
+
+{{ next_button }}
+
+
+{{ endblock }}

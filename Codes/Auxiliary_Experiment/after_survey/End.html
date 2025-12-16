@@ -1,0 +1,21 @@
+{{ extends 'global/Page.html' }}
+{{ block title }}结束页{{ endblock }}
+
+{{ block content }}
+<p>游戏一中，你的两个任务收入如下：</p>
+<p>您的决策任务收入是{{participant.finalpayoff}}数</p>
+<p>你的猜测任务收入是{{participant.guesspayoff}}点数</p>
+<p>你的游戏二收入是{{participant.bret}}点数</p>
+<p>出场费为10元，问卷收入为5元</p>
+{{ if player.item0 == 5 }}
+        <p>你在问卷中的控制问题回答正确，因此能获得问卷收入5元。</p>
+    {{ endif }}
+{{ if player.item0 != 5}}
+<p>你在问卷中的控制问题回答错误，因此无法获得问卷收入5元。</p>
+  {{endif}}
+<p>本场实验的总收入为{{player.final_pay}}元</p>
+<p>
+    实验到此全部结束！感谢您参与本场实验！请遵循实验员的指示领取报酬后再离开实验室！</p>
+
+
+{{ endblock }}

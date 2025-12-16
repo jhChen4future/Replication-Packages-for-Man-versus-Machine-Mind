@@ -1,0 +1,13 @@
+{{ extends 'global/Page.html' }}
+{{ block title }}问卷调查{{ endblock }}
+
+{{ block content }}
+
+<p>请回答你是否同意下列一些关于个人特征的描述,比如，你是否同意“你是一个比较安静的人？”。除控制问题外，您的答案不会影响您的总收入。</p>
+
+<p><b>我是一个......的人</b></p>
+{{ formfields }}
+
+{{ next_button }}
+
+{{ endblock }}

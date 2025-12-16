@@ -1,0 +1,37 @@
+{% extends 'otree/WaitPage.html' %}
+{% load otree %}
+{% block title %}Please wait for your partner to make a choice{% endblock %}
+
+{% block content %}
+<font size="+2">
+    You chose to exercise <span style="color: red"><b>{{ player.decision }}</b> </span></p>
+    <div class="form-group required">
+            <table class="table table-bordered text-center" style="width: auto; margin: auto">
+                <tr>
+                    <th colspan="2" rowspan="2"></th>
+                    <th colspan="2"><i>Your Partner </i></th>
+                </tr>
+                <tr>
+                    <th>Strategy 1</th>
+                    <th>Strategy 2</th>
+                </tr>
+                <tr>
+                    <th rowspan="2"><span style="color: red "><b>You</b></span></th>
+                    <td><button name="decision" value="Strategy_1" class="btn btn-primary btn-large" disabled>Exercise Strategy 1</button></td>
+                    <td><span style="color: red "><b>$5</b></span>,
+                    <i>$5</i></td>
+                    <td><span style="color: red "><b>$0</b></span>,
+                    <i>$10</i></td>
+                </tr>
+                <tr>
+                    <td><button name="decision" value="Strategy_2" class="btn btn-primary btn-large" disabled>Exercise Strategy 2</button></td>
+                    <td><span style="color: red "><b>$0</b></span>,
+                    <i>$10</i></td>
+                    <td><span style="color: red "><b>$2</b></span>,
+                    <i>$2</i></td>
+                    </tr>
+            </table>
+    </div>
+
+
+{% endblock %}

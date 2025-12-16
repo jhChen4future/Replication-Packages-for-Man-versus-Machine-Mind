@@ -1,0 +1,38 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+
+{% block title %}
+
+        Instruction for Part 3
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="card bg-light instructions">
+    <font size="+1.5">
+    <div class="card-body">
+        <p>
+            This is <span style="color:red">Part 3 (the last part)</span> of the experiment.
+        </p>
+
+        <p align="justify">
+        In this part, you will be assigned as either Proposer or Responder and then make decisions described as below.<br><br>
+
+        There will be $10.00 for a proposer to decide how much she keeps and how much she wants to send to her partner. Once the proposer makes the offer,
+       <strong>the responder can either accept it or reject it.</strong>
+        <p>If the responder chooses to accept it, the monetary allocation happens and they split the money as proposer decided. However, if the responder decides to reject the offer,
+        the proposal fails and both proposer and responder will receive $0.00 and the $10.00 will vanish away.</p>
+
+        <p>If you do not have any questions, please click the <strong>Next button</strong> below to proceed.</p>
+
+    </div>
+</div>
+
+    {% next_button %}
+
+
+
+{% endblock %}

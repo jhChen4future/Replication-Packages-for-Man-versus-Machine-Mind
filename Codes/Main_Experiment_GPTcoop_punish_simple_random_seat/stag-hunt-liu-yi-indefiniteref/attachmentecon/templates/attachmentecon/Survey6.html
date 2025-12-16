@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Survey Continued
+{% endblock %}
+
+{% block content %}
+
+    On a scale of 1 to 7 where 1 indicates strongly disagree and 7 indicates strongly agree, please answer the following questions.
+
+    {% formfields %}
+
+    {% next_button %}
+
+{% endblock %}

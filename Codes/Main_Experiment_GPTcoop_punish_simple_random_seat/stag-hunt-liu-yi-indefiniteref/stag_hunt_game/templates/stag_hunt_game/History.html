@@ -1,0 +1,32 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block content %}
+<p>
+
+<table class="table">
+    <tr>
+        <td>Round Number</td>
+        <td>Your decision</td>
+        <td>Your opponent's decision</td>
+        <th>Your payoff</th>
+        <td>Your opponent's payoff</td>
+    </tr>
+    {% for p in player_in_all_rounds_rev %}
+    <tr>
+        <td>{{ p.round_number }}</td>
+        <td>{{ p.decision }}</td>
+        <td>{{ p.other_player.decision }}</td>
+        <td>{{ p.payoff }}</td>
+        <td>{{ p.other_player.payoff }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</p>
+    {% next_button %}
+
+{% endblock %}

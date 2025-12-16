@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Thank you
+{% endblock %}
+
+{% block content %}
+    <font size="+1.5">
+    <div class="panel panel-default" style="margin-bottom:10px">
+        <div class="panel-body">
+            <p><strong>Laboratory:</strong></p>
+            <p>Please remain seated until your number is called. Then take your number card, and proceed to the cashier.</p>
+        </div>
+    </div>
+        <p>Some announcement I might use if I run it online: Your one-time participant code is <span style="color:red"><strong>{{ participant.code }}</strong></span> and please secure this code carefully, for this is the sole proof to receive your payment.</p>
+        <p>Please fill out this google form for payment information xxxxxx.</p>
+        <p>We will send out the payment by order and it can take up to 14 days. If you haven't received your payment after xxxxx, please email xxxxxx with your payment code.</p>
+
+
+{% endblock %}
+

@@ -1,0 +1,9 @@
+{{ block title }}游戏结果{{ endblock }}
+{{ block content }}
+<p>计算机随机抽取<b>第{{player.round_to_pay}}轮</b>的结果计算收益</p>
+<p>您在第{{player.round_to_pay}}轮的收入为<b>{{player.payoff}}数</b></p>
+<p>因此您本游戏的收入为<b>{{player.payoff}}数</b></p>
+
+{{ next_button }}
+
+{{ endblock }}

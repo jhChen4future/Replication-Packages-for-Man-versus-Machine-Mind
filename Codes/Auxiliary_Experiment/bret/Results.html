@@ -1,0 +1,21 @@
+{{ extends 'global/Page.html' }}
+{{ block title }}结果{{ endblock }}
+
+{{ block content }}
+
+<p>
+	您决定收集<b>{{player.boxes_collected}}</b>个盒子</p>
+        
+<p>
+	炸弹藏在<b>第{{Constants.bomb}}个盒子背后</b></p>
+{{if player.pay_this_round == True}}
+<p>因此，您没有收集到带炸弹的盒子，您本游戏的收入为{{player.payoff}}数</p>
+{{else}}
+<p>因此,您收集到了带炸弹的盒子，您本游戏的收入为{{player.payoff}}数</p>
+
+{{endif}}
+
+{{ next_button }}
+
+
+{{ endblock }}

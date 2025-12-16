@@ -1,0 +1,28 @@
+{% load otree %}
+
+<div class="card bg-light m-3">
+    <div class="card-body">
+    <font size="+1.5">
+    <h3>
+        This is <span style="color:red"><i><b>Part 2</b></i></span> of the experiment.
+    </h3>
+    <p>
+        You have been randomly and anonymously paired with another participant.
+        One of you will be selected at random to be <span style="color:blue">participant A</span>;
+        the other will be <span style="color:green">participant B</span>.
+        You will learn whether you are participant A or B prior to making any
+        decision.
+    </p>
+    <p>
+        To start, participant A receives {{ Constants.endowment }};
+        participant B receives
+        nothing.
+        Participant A can send <strong>none, some or all of
+        her {{ Constants.endowment }}</strong> to participant B.
+        Before B receives this amount, it will be <span style="color:red"><strong>multiplied
+        by {{ Constants.multiplier }}</strong></span>. Once B receives
+        the tripled amount, she can decide to send <strong>none, some or all of it</strong> to
+        A.
+    </p>
+</div>
+</div>

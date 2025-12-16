@@ -1,0 +1,25 @@
+{{ extends 'global/Page.html' }}
+{{ block title }}决策{{ endblock }}
+
+{{ block content }}
+
+<p> 角色1和角色2的选择将<b>共同决定他们各自获得的点数</b>，具体如下： </p> 
+	<ul> <li>如果角色1选择A，角色2选择C，则A获得{{C.R1_1A2C}}点，B获得{{C.R2_1A2C}}点；</li>
+	<li>如果角色1选择A，角色2选择D，则A获得{{C.R1_1A2D}}点，B获得{{C.R2_1A2D}}点；</li> 
+	<li>如果角色1选择B，角色2选择E，则A获得{{C.R1_1B2E}}点，B获得{{C.R2_1B2E}}点；</li>
+	<li>如果角色1选择B，角色2选择F，则A获得{{C.R1_1B2F}}点，B获得{{C.R2_1B2F}}点。</li> 
+	</ul> 
+<p>
+    请选择您的决策
+</p>
+{{formfields}}
+
+
+
+{{ next_button }}
+
+
+
+
+
+{{ endblock }}

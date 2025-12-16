@@ -1,0 +1,13 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Contribution
+{% endblock %}
+
+{% block content %}
+    You have {{ Constants.endowment }}. Please enter your contribution to the public good project below.
+        {% formfield player.contribute %}
+        {% next_button %}
+
+{% endblock %}

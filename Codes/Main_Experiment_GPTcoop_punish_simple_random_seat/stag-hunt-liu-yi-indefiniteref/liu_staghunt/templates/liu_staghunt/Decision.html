@@ -1,0 +1,95 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Make Your Choice
+{% endblock %}
+
+{% block content %}
+<font size="+2">
+    {% if player.role == "Hunter 1" %}
+        <p>
+            You are <span style="color: red;"><b>Hunter 1</b></span>. Please click on the button to make your choice.
+        </p>
+
+        <div class="form-group required">
+            <table class="table table-bordered text-center" style="width: auto; margin: auto">
+                <tr>
+                    <th colspan="2" rowspan="2"></th>
+                    <th colspan="2"><span style="color: green;"><i>Your Partner</i></span></th>
+                </tr>
+                <tr>
+                    <th>Stag</th>
+                    <th>Hare</th>
+                </tr>
+                <tr>
+                    <th rowspan="2"><span style="color: red;"><b>You</b></span></th>
+                    <td><button name="decision" value="Stag" class="btn btn-primary btn-large">Hunt Stag</button></td>
+                    <td><span style="color: red;"><b>{{Constants.both_stag_payoff}}</b></span>, <span style="color: green;"><i>{{Constants.both_stag_payoff}}</i></span></td>
+                    <td><span style="color: red;"><b>{{ Constants.stag_hare_p1_payoff }}</b></span>, <span style="color: green;"><i>{{group.hare_p2_payoff}}</i></span></td>
+                </tr>
+                <tr>
+                    <td><button name="decision" value="Hare" class="btn btn-primary btn-large">Hunt Hare</button></td>
+                    <td><span style="color: red;"><b>{{Constants.hare_p1_payoff}}</b></span>, <span style="color: green;"><i>{{ Constants.stag_hare_p1_payoff }}</i></span></td>
+                    <td><span style="color: red;"><b>{{Constants.hare_p1_payoff}}</b></span>, <span style="color: green;"><i>{{group.hare_p2_payoff}}</i></span></td>
+                </tr>
+            </table>
+        </div>
+    {% else %}
+        <p>
+            You are <span style="color: green;"><i>Hunter 2</i></span>. Please click on the button to make your choice.
+        </p>
+        <div class="form-group required">
+            <table class="table table-bordered text-center" style="width: auto; margin: auto">
+                <tr>
+                    <th colspan="2" rowspan="2"></th>
+                    <th colspan="2"><span style="color: green;"><i>You</i></th>
+                </tr>
+                <tr>
+                    <th><button name="decision" value="Stag" class="btn btn-primary btn-large">Hunt Stag</button></th>
+                    <th><button name="decision" value="Hare" class="btn btn-primary btn-large">Hunt Hare</button></th>
+                </tr>
+                <tr>
+                    <th rowspan="2"><span style="color: red;"><b>Your Partner</b></span></th>
+                    <td>Stag</td>
+
+                    <td><span style="color: red;"><b>{{Constants.both_stag_payoff}}</b></span>, <span style="color: green;"><i>{{Constants.both_stag_payoff}}</i></span></td>
+                    <td><span style="color: red;"><b>{{ Constants.stag_hare_p1_payoff }}</b></span>, <span style="color: green;"><i>{{group.hare_p2_payoff}}</i></span></td>
+                </tr>
+                <tr>
+                    <td>Hare</td>
+                    <td><span style="color: red;"><b>{{Constants.hare_p1_payoff}}</b></span>, <span style="color: green;"><i>{{ Constants.stag_hare_p1_payoff }}</i></span></td>
+                    <td><span style="color: red;"><b>{{Constants.hare_p1_payoff}}</b></span>, <span style="color: green;"><i>{{group.hare_p2_payoff}}</i></span></td>
+                </tr>
+            </table>
+        </div>
+
+    {% endif %}
+
+    <div>
+        <p><b>History</b></p>
+        <table class="table">
+            <tr>
+                <td>Round Number</td>
+                <td>Your Choice</td>
+                <td>Your Partner's Choice</td>
+                <th>Your Payoff</th>
+                <td>Your Partner's payoff</td>
+                <td>Your Total Payoff</td>
+            </tr>
+        {% for p in player_in_previous_rounds %}
+            <tr>
+                <td>{{ p.round_number }}</td>
+                <td>{{ p.decision }}</td>
+                <td>{{ p.other_player.decision }}</td>
+                <td><span style = "color: blue"><b>{{ p.payoff }}</b></span></td>
+                <td>{{ p.other_player.payoff }}</td>
+                <td>{{ participant.payoff }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+
+
+{% endblock %}
+

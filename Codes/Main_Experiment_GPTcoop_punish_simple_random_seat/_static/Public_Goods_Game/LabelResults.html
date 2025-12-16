@@ -1,0 +1,52 @@
+{{ extends 'global/Page.html' }}
+{{ block title }}身份公示{{ endblock }}
+
+{{ block content }}
+
+{{if player.id_in_group == 1}}
+
+<p>
+    您是{{group.label1}}。
+</p>
+
+<p>
+    其他玩家的身份分别是{{group.label2}}, {{group.label3}}, {{group.label4}}。
+</p>
+
+{{elif player.id_in_group == 2}}
+
+<p>
+    您是{{group.label2}}。
+</p>
+
+<p>
+    其他玩家的身份分别是{{group.label1}}, {{group.label3}}, {{group.label4}}, respectively。
+</p>
+
+{{elif player.id_in_group == 3}}
+
+<p>
+    您是{{group.label3}}。
+</p>
+
+<p>
+    其他玩家的身份分别是{{group.label1}}, {{group.label2}}, {{group.label4}}。
+</p>
+
+
+{{else}}
+<p>
+    您是{{group.label4}}。
+</p>
+
+<p>
+    其他玩家的身份分别是{{group.label1}}, {{group.label2}}, {{group.label3}}。
+</p>
+
+
+
+{{endif}}
+
+{{ next_button }}
+
+{{ endblock }}

@@ -1,0 +1,41 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Summary
+{% endblock %}
+
+{% block content %}
+<font size="+2">
+<p>Date/Time: <span id="datetime"></span></p>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleString();
+</script>
+
+<p>
+<table class="table">
+    <tr>
+        <td>Round Number</td>
+        <th>Your Payoff</th>
+        <th>Your Partner's Payoff</th>
+    </tr>
+    {% for p in player_in_all_rounds %}
+    <tr>
+        <td>{{ p.round_number }}</td>
+        <td>{{ p.payoff }}</td>
+        <td>{{ p.other_player.payoff }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</p>
+
+<p>
+        <span style="size: 24pt">The paying round is round <span style="color:blue"><b>{{ paying_round }}</b></span> for your group.
+            You will be paid by this round's payoff only. You can check your partner's payoff in the table above as well.</span>
+</p>
+
+    {% next_button %}
+
+{% endblock %}

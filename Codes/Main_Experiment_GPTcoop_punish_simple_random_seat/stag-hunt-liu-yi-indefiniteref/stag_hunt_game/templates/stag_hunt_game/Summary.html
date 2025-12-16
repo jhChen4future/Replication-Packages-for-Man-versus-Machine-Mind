@@ -1,0 +1,38 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Summary
+{% endblock %}
+
+{% block content %}
+<p>Date/Time: <span id="datetime"></span></p>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleString();
+</script>
+
+<p>
+<table class="table">
+    <tr>
+        <td>Round Number</td>
+        <th>Your payoff</th>
+    </tr>
+    {% for p in player_in_all_rounds_rev %}
+    <tr>
+        <td>{{ p.round_number }}</td>
+        <td>{{ p.payoff }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</p>
+
+<p>
+        <span style="size: 24pt">The paying round was <b>{{ paying_round }}</b>.
+            You will be paid by only the payoff of this specific round. </span>
+</p>
+
+    {% next_button %}
+
+{% endblock %}

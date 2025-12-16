@@ -1,0 +1,13 @@
+{{ block title }}投入{{ endblock }}
+{{ block content }}
+
+    <p>
+        您的小组共有{{ Constants.players_per_group }}名玩家，初始点数为 {{ Constants.endowment }}，您投入给小组公共账户中的点数将被乘以{{ Constants.multiplier }}。
+    </p>
+
+
+    {{ formfields }}
+
+    {{ next_button }}
+{{ include Constants.INSTRUCTIONS_TEMPLATE }}
+{{ endblock }}

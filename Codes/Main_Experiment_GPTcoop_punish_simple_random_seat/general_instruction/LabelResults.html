@@ -1,0 +1,32 @@
+{{ extends 'global/Page.html' }}
+{{ block title }}身份公示{{ endblock }}
+
+{{ block content }}
+<p>
+    下面这个表格展示了本轮游戏中所有玩家的身份信息，展示顺序随机打乱后，按照ChatGPT、Human的顺序进行排序展示</p>
+
+
+<table class="table"> 
+	<tr>
+	    <td>玩家ID（随机生成）</td>
+	    <td>玩家身份</td>
+	</tr>
+    {{ if player.label1 == 'ChatGPT' }}
+        <tr>
+            <td>玩家 {{ player.id_in_group }} (你)</td>
+            <td>{{ player.label1 }}</td>
+        </tr>
+    {{ endif }}
+    {{ if player.label1 == 'Human' }}
+        <tr>
+            <td>玩家 {{ player.id_in_group }} (你)</td>
+            <td>{{ player.label1 }}</td>
+        </tr>
+    {{ endif }}
+</table>
+
+
+
+{{ next_button }}
+
+{{ endblock }}

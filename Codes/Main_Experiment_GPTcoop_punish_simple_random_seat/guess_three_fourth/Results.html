@@ -1,0 +1,35 @@
+{{ extends 'global/Page.html' }}
+{{ block title }}结果{{ endblock }}
+
+{{ block content }}
+
+<p>下面是所有玩家的猜数结果</p>
+
+<p>
+    {{ sorted_guesses }}
+</p>
+
+<p>	
+	平均数的3/4为 {{ group.three_fourth_avg }}。
+	最接近平均数的3/4的猜数值为 {{ group.best_guess }}。
+</p>
+
+<p>您猜{{ player.guess }}。</p>
+
+<p>
+    {{ if player.is_winner }}
+        {{ if group.num_winners > 1 }}
+		因此，您是{{group.num_winners}}赢家中的其中一位！
+        {{ else }}
+		因此，您是赢家！
+        {{ endif }}
+    {{ else }}
+	因此，您没有在本游戏中取得胜利。
+    {{ endif }}
+您本游戏的收入为 {{ player.payoff }}。
+</p>
+
+{{ next_button }}
+
+
+{{ endblock }}

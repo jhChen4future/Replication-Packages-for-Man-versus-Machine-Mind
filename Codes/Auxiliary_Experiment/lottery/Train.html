@@ -1,0 +1,30 @@
+{{ extends 'global/Page.html' }}
+{{ block title }}游戏2测试问题{{ endblock }}
+
+{{ block content }}
+
+<p>请您回答下述的四个测试问题，只有测试问题通过后才能正式进入游戏。</p>
+
+
+{{ formfields }}
+<p>六个选项的具体数值如下（游戏时也会展示）：</p>
+
+<table border="1" cellpadding="6" cellspacing="0">
+    <thead>
+        <tr>
+            <th>选项</th>
+            <th>结果 A</th>
+            <th>结果 B</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>选项1</td><td>18 点数</td><td>18 点数</td></tr>
+        <tr><td>选项2</td><td>22 点数</td><td>15 点数</td></tr>
+        <tr><td>选项3</td><td>26 点数</td><td>12 点数</td></tr>
+        <tr><td>选项4</td><td>30 点数</td><td>9 点数</td></tr>
+        <tr><td>选项5</td><td>34 点数</td><td>6 点数</td></tr>
+        <tr><td>选项6</td><td>37 点数</td><td>2 点数</td></tr>
+    </tbody>
+</table>
+{{ next_button }}
+{{ endblock }}

@@ -1,0 +1,23 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+<font size="+1.5">
+{% block title %}
+        Proposer's Decision
+{% endblock %}
+
+{% block content %}
+    <font size="+1.5">
+    <p>
+        If you are chosen as the  <span style="color:red"><strong>proposer</strong></span>.
+    </p>
+
+    <p>
+            You need to make the decision of how you want to allocate the $10.00 between you and your partner and wait until your partner to make a decision of either to accept the offer or reject it.
+    </p>
+
+    {% formfield player.amount_offered label="How much money do you want to offer your partner?" %}
+
+    {% next_button %}
+
+
+{% endblock %}

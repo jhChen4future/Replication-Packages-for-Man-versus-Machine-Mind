@@ -1,0 +1,32 @@
+{{ block title }}结果{{ endblock }}
+
+{{ block content }}
+
+{% if player.id_in_group == 1 %}
+    {% if player.position == 1 %}
+        <p>本轮您扮演的是<strong>角色1</strong>。</p>
+        <p>您的选择是：<strong>{{ player.YouRole1 }}</strong></p>
+        <p>对手（角色2）的选择是：<strong>{{ group.player_2_position2 }}</strong></p>
+    {% else %}
+        <p>本轮您扮演的是<strong>角色2</strong>。</p>
+        <p>您的选择是：<strong>{{ player.YouRole2 }}</strong></p>
+        <p>对手（角色1）的选择是：<strong>{{ group.player_2_position1 }}</strong></p>
+    {% endif %}
+{% else %}
+    {% if player.position == 1 %}
+        <p>本轮您扮演的是<strong>角色1</strong>。</p>
+        <p>您的选择是：<strong>{{ player.YouRole1 }}</strong></p>
+        <p>对手（角色2）的选择是：<strong>{{ group.player_1_position2 }}</strong></p>
+    {% else %}
+        <p>本轮您扮演的是<strong>角色2</strong>。</p>
+        <p>您的选择是：<strong>{{ player.YouRole2 }}</strong></p>
+        <p>对手（角色1）的选择是：<strong>{{ group.player_1_position1 }}</strong></p>
+    {% endif %}
+{% endif %}
+
+<p><strong>若本情境被抽中作为决策任务的收益计算情境，则您本轮的收益是：{{ participant.ug3payoff }}</strong></p>
+<p><strong>若本情境被抽中作为猜测任务的收益计算情境，则您本轮的收益是：{{ participant.ug3guess }}点</strong></p>
+
+{{ next_button }}
+
+{{ endblock }}

@@ -1,0 +1,18 @@
+{{ extends 'global/Page.html' }}
+{{ block title }}结束页{{ endblock }}
+
+{{ block content }}
+
+<p>
+    实验到此全部结束！感谢您参与本场实验！请遵循实验员的指示领取报酬后再离开实验室！</p>
+<p>您在游戏一中的收入为,<b>{{participant.trust}}数</b>，汇率为<b>1点数={{participant.credit}}人民币</b>。</p>
+<p>您在游戏二中的收入为,<b>{{participant.ultimatum}}数</b>，汇率为<b>1点数={{participant.credit}}人民币</b>。</p>
+<p>您在游戏三中的收入为,<b>{{participant.pd}}数</b>，汇率为<b>1点数={{participant.lowcredit}}人民币</b>。</p>
+<p>您在游戏四中的收入为,<b>{{participant.dictator}}数</b>，汇率为<b>1点数={{participant.credit}}人民币</b>。</p>
+<p>您在游戏五中的收入为,<b>{{participant.punishment_simple}}数</b>，汇率为<b>1点数={{participant.lowcredit}}人民币</b>。</p>
+<p>您在游戏六中的收入为,<b>{{participant.guess_three_fourth}}数</b>，汇率为<b>1点数={{participant.credit}}人民币</b>。</p>
+<p>您在游戏七中的收入为,<b>{{participant.bret_simple}}数</b>，汇率为<b>1点数={{participant.credit}}人民币</b>。</p>
+<p>因此计算您<b>本场实验的决策总报酬为{{player.final_pay}}元人民币</b></p>
+<p>您<b>本场实验的总报酬为出场费{{C.showup}}+{{player.final_pay}}={{player.final_paypay}}元人民币</b></p>
+
+{{ endblock }}

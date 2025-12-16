@@ -1,0 +1,76 @@
+{{ extends 'global/Page.html' }}
+{{ block title }}游戏1：任务与收入{{ endblock }}
+
+{{ block content }}
+<div class="card bg-light m-3">
+  <div class="card-body">
+    <p>在游戏1中，你将面对 <b>18个不同的决策情境</b>。在每个情境中，你需要完成两个任务：</p>
+    <ul>
+      <li><b>决策任务：</b>假设你是角色1或角色2，你需要分别做出选择。</li>
+      <li><b>猜测任务：</b>你需要预测<b>你的对手在角色1和角色2中将如何选择</b>。</li>
+    </ul>
+
+    <p><b>猜测内容包括：</b></p>
+    <ul>
+      <li>如果对手是角色1，你的对手以多大概率选择A，多大概率选择B；</li>
+      <li>如果对手是角色2，你的对手以多大概率选择C，多大概率选择D；</li>
+      <li>如果对手是角色2，你的对手以多大概率选择E，多大概率选择F。</li>
+    </ul>
+
+    <p>实验结束后，系统将<b>随机从18个情境中选出两个情境用于支付</b>：</p>
+    <ul>
+      <li><b>一个情境</b>用于根据你的决策获得点数；</li>
+      <li><b>另一个情境</b>用于根据你的猜测精度获得点数。</li>
+    </ul>
+
+    <h5 class="mt-4">🔹 决策任务如何计分</h5>
+    <p>在用于决策支付的情境中，你将被随机分配为角色1或角色2（概率各为50%），你的对手也将被随机分配为另一个角色。</p>
+    <p>你的点数取决于你在所分配角色中所做的选择，<b>以及你对手在其角色中所做的选择</b>。</p>
+
+    <p>例如，在情境3中：</p>
+    <ul>
+      <li>你预设选择，你是角色1时选择A，是角色2时选择C或E；</li>
+      <li>你的对手预设选择，是角色1时选择B，是角色2时预设选择D或F。</li>
+    </ul>
+    <p>系统抽取情境3作为支付情境，并将你分配为角色2，你的对手为角色1，则组合选择为（角色1：B，角色2：E）。</p>
+    <p><b>如果该组合对应的点数为（角色1得90，角色2得10），则你获得10点，对手获得90点。</b></p>
+
+    <h5 class="mt-4">🔹 猜测任务如何计分</h5>
+    <p>在用于猜测支付的情境中，系统会<b>随机选取你所做的某一项猜测用于支付</b>。</p>
+    <p>你猜得越接近其他人的实际选择，就能获得越多点数。猜测可获得的点数在0至60点之间，具体点数取决于猜测的准确程度。</p>
+
+    <p>具体的猜测准确度与收入之间的关系可以点击下方按钮查看：</p>
+    
+  </div>
+</div>
+<!-- 小按钮，用于显示图片 -->
+<button id="showButton" type="button" onclick="toggleImage()" style="padding: 10px 20px; font-size: 16px; z-index: 1001; position: relative; background-color: #4da6ff; color: white; border: none;">
+    点击显示预测与收入换算
+</button>
+
+<!-- 全屏图片和关闭按钮 -->
+<div id="imageOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: black; z-index: 1000;">
+    <img src="{{ static 'general/guess.png' }}" style="width: 100%; height: 100%; object-fit: contain;" />
+    <!-- 关闭按钮 -->
+    <button type="button" onclick="toggleImage()" style="position: absolute; top: 20px; right: 20px; padding: 10px 20px; font-size: 16px; z-index: 1001; background-color: #4da6ff; color: white; border: none;">
+        关闭
+    </button>
+</div>
+
+<script>
+function toggleImage() {
+    const overlay = document.getElementById('imageOverlay');
+    const showButton = document.getElementById('showButton');
+    
+    // Toggle overlay visibility
+    if (overlay.style.display === 'none' || overlay.style.display === '') {
+        overlay.style.display = 'block';
+        showButton.style.display = 'none';  // 隐藏“显示图片”按钮
+    } else {
+        overlay.style.display = 'none';
+        showButton.style.display = 'inline-block';  // 显示“显示图片”按钮
+    }
+}
+</script>
+{{ next_button }}
+{{endblock}}

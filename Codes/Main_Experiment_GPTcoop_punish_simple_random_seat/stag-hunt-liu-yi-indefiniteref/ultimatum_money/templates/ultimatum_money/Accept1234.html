@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+        Responder's Decision
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        If you are chosen as the <strong>responder</strong>.
+    </p>
+    <p>
+            You will need to check the offer your partner sends you. What is the minimum amount of money you will need to accept this offer (that means, if the provider offers less than this money, you will reject the offer)?
+    </p>
+
+    {% formfield player.amount_accept label="Please enter the minimum amount of money you can accept"  %}
+
+    {% next_button %}
+
+
+{% endblock %}

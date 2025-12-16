@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+        Die Entscheidung des Anbieters
+{% endblock %}
+
+{% block content %}
+    <p>
+            Du bist jetzt in der Rolle des <strong>Anbieters</strong>.
+    </p>
+
+    <p>
+            Ihr zwei habt folgende Anfangsausstattung von {{ Constants.endowmenttime }} Minuten. Gebe unten den Betrag in Minuten ein, denn du deinem Mitspieler anbieten willst.
+    </p>
+
+    {% formfield player.amount_offeredtime label="Wie viel willst du deinem Mitspieler anbieten?" %}
+
+    {% next_button %}
+
+
+{% endblock %}

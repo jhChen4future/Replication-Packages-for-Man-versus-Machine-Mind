@@ -1,0 +1,79 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+<font size="+2">
+    {% if player.role == "Hunter 1" %}
+        <p>
+            {% if same_choice %}
+            Both of you chose to hunt <span style="color: blue "><b>{{ my_decision }}</b></span>.
+            {% else %}
+            You chose to hunt <span style="color: red "><b>{{ my_decision }}</b></span> and your partner chose to hunt <span style="color: green "><i>{{ opponent_decision }}</i></span>.
+            {% endif %}
+        </p>
+
+        <p>
+            As a result, you earned <span style="color: red "><b>{{ player.payoff }}</b></span> and your partner earned <span style="color: green "><i>{{player.other_player.payoff}}</i></span>.
+        </p>
+        <p>
+            Your total payoff up to this round is <span style="color: blue "><b>{{participant.payoff}}</b></span>.
+        </p>
+
+    {% else %}
+        <p>
+            {% if same_choice %}
+            Both of you chose to hunt <span style="color: blue "><b>{{ my_decision }}</b></span>.
+            {% else %}
+            You chose to hunt <span style="color: green "><i>{{ my_decision }}</i></span> and your partner chose to hunt <span style="color: red "><b>{{ opponent_decision }}</b></span>.
+            {% endif %}
+        </p>
+
+        <p>
+            As a result, you earned <span style="color: green "><i>{{ player.payoff }}</i></span> and your partner earned <span style="color: red "><b>{{player.other_player.payoff}}</b></span>.
+        </p>
+        <p>
+            Your total payoff up to this round is <span style="color: blue "><b>{{participant.payoff}}</b></span>.
+        </p>
+
+    {% endif %}
+
+    {% if player.decision == 'Stag' and player.other_player.decision == 'Stag' %}
+        <img src="{% static "global/happy.jpg" %}" alt="Happy" height="150" width="150"/>
+    {% else %}
+        <img src="{% static "global/sad.jpg" %}" alt="Sad" height="150" width="150"/>
+    {% endif %}
+
+    <div>
+        <p><b>History</b></p>
+        <table class="table">
+            <tr>
+                <td>Round Number</td>
+                <td>Your Choice</td>
+                <td>Your Partner's Choice</td>
+                <th>Your Payoff</th>
+                <td>Your Partner's payoff</td>
+                <td>Your Total Payoff</td>
+            </tr>
+        {% for p in player_in_all_rounds %}
+            <tr>
+                <td>{{ p.round_number }}</td>
+                <td>{{ p.decision }}</td>
+                <td>{{ p.other_player.decision }}</td>
+                <td><span style = "color: blue"><b>{{ p.payoff }}</b></span></td>
+                <td>{{ p.other_player.payoff }}</td>
+                <td>{{ participant.payoff }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+
+
+    {% next_button %}
+
+
+{% endblock %}
+

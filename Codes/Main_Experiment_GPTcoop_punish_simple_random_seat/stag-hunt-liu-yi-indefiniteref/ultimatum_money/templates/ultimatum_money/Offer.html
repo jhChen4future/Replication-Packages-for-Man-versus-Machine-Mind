@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+        Provider's Decision
+{% endblock %}
+
+{% block content %}
+    <p>
+            If you are chosen as the  <strong>provider</strong>.
+    </p>
+
+    <p>
+            You need to make the decision of how you want to allocate the $10 between you and your partner and wait until your partner to make a decision of either to accept the offer or reject it.
+    </p>
+
+    {% formfield player.amount_offered label="How much money do you want to offer your partner?" %}
+
+    {% next_button %}
+
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{{ extends 'global/Page.html' }}
+{{ block title }}第6局结果{{ endblock }}
+
+{{ block content }}
+<p>
+您已结束第六局游戏，本局游戏共进行{{Constants.num_rounds}}轮</p>
+
+<p>您在本局游戏中的总收入为{{player.Total_payoff}}数</p>
+<p>即将与一名<b>新玩家</b>匿名随机匹配进入第六局游戏。</p>
+
+{{ next_button }}
+
+{{ endblock }}

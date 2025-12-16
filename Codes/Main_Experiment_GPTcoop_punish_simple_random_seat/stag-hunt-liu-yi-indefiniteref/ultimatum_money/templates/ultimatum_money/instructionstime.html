@@ -1,0 +1,76 @@
+{% load otree static %}
+
+<div class="card bg-light instructions">
+    <div class="card-body">
+    <h3 class="panel-sub-heading">
+        Instruktionen
+    </h3>
+
+
+
+        <p align="justify">
+            Zuerst werden alle Spieler mit einem zufällig gezogen Spieler zusammengebracht.
+            Sie bekommen dementsprechend ein Mitspieler. Aber Ihre Identität und die Identiät Ihres Mitspielers
+            ist Ihnen nicht bekannt und bleibt auch nach Ihren Entscheidungen unbekannt.
+        </p>
+
+        <p align="justify">
+            In diesem Spiel wird es zwei verschiedene Rollen geben:
+            den <strong>Anbietenden</strong> und den <strong>Anwortenden</strong>.
+            Sie werden zu Beginn des Spiels Entscheidungen für beide Rollen des jeweiligen Spielertyps treffen.
+            Danach wird zufällig gezogen, welcher Spielertyp Sie innerhalb Ihres Paares darstellen.
+            Welcher Spielertyp für Sie auszahlungsrelevant wird, wird Ihnen nach Ihren Entscheidungen für die beiden Spielertypen angezeigt.
+        </p>
+
+        <p align="justify">
+            Sie beide erhalten zusammen eine Anfangsausstattung von {{ Constants.endowment }}.
+            In diesem Experiment ist es Ihre Aufgabe diesen Betrag aufzuteilen.
+            Der Anbieter hat die Möglichkeit dem Anwortenden ein Angebot zumachen.
+            Wird das Angebot angenommen, wird die Aufteilung des Anbietenden auszahlungsrelevant.
+            Wird das Angebot allerdings vom Antwortenden abgelehnt, erhalten beide {{ Constants.payoff_if_rejected }}.
+        </p>
+
+        <h4 class="panel-sub-heading">
+            Die Rolle des Anbietenden
+        </h4>
+
+        <p align="justify">
+            Der Anbietende hat {{ Constants.offer_choices_count }}
+            Optionen, wie der Betrag von {{ Constants.endowment }} zwischen den beiden Spielern aufgeteilt werden kann
+        </p>
+
+        <ol>
+            {% for give, keep in Constants.keep_give_amounts %}
+
+                <li>{{ give }} für den Anwortenden (der Anbietende behält {{ keep }})</li>
+
+            {% endfor %}
+        </ol>
+
+        <h4 class="panel-sub-heading">
+            Die Rolle des Anwortenden
+        </h4>
+
+        <p align="justify">
+                Der Anwortende kann das Angebot annehmen oder ablehnen.
+        </p>
+
+        <h4 class="panel-sub-heading">
+            Ergebnis
+        </h4>
+
+        <p align="justify">
+            Am Ende des Experimentes erfahren Sie welcher Rolle Sie zugewiesen wurden.
+            Die Ergebnisse Ihrer Enstcheidungen und die Ihres Partners werden dann angezeigt.
+            Dabei wird das auszahlungsrelevante Angebot nochmals angezeigt, sowie
+            ob das Angebot angenommen oder abgelehnt wurde.
+        </p>
+
+
+        Zudem werden eine der folgenden zwei Auszahlungen angezeigt:
+        <ul>
+            <li>Wenn das Angebot akzepiert wurde, erhalten die Spieler dementsprechend die Auszahlung</li>
+            <li>Wenn das Angebot ablehnt wurde, erhalten beide Spieler {{ Constants.payoff_if_rejected }}</li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block content %}
+<font size="+2">
+<p>
+
+<table class="table">
+    <tr>
+        <td>Round Number</td>
+        <td>Your Choice</td>
+        <td>Your Partner's Choice</td>
+        <th>Your Payoff</th>
+        <td>Your Partner's payoff</td>
+        <td>Your Total Payoff</td>
+    </tr>
+    {% for p in player_in_all_rounds %}
+    <tr>
+        <td>{{ p.round_number }}</td>
+        <td>{{ p.decision }}</td>
+        <td>{{ p.other_player.decision }}</td>
+        <td><span style = "color: blue"><b>{{ p.payoff }}</b></span></td>
+        <td>{{ p.other_player.payoff }}</td>
+        <td>{{ participant.payoff }}</td>
+    </tr>
+    {% endfor %}
+</table>
+    <br>If you are done reviewing the history, you can proceed to next round of the game by clicking next button. If there's no next round, it will jump to the summary page.
+</p>
+    {% next_button %}
+
+{% endblock %}

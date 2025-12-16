@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    End of Experiment Questionnaire
+{% endblock %}
+
+{% block content %}
+
+    Please enter the following information. All information will be confidential and will not be disclosed.
+
+    {% formfields %}
+
+    {% next_button %}
+
+{% endblock %}

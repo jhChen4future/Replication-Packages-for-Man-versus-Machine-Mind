@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+        Die Entscheidung des Anwortenden
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Du bist der <strong>Antwortende</strong>.
+    </p>
+
+    <p>
+        Ab wie viel Minuten Wartezeit würdest du gerade noch akzeptieren?
+    </p>
+
+    {% formfield player.amount_accepttime label="Ab wie viel Minuten Wartezeit würdest du ein Angebot gerade noch akzeptieren?" %}
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Contribution History
+{% endblock %}
+
+{% block content %}
+
+<table class="table">
+    <tr>
+        <th>Round Number</th>
+        <th>Your Contribution</th>
+        <th>Group Contribution</th>
+        <th>Your payoff</th>
+    </tr>
+    {% for p in player_in_all_rounds %}
+    <tr>
+        <td>{{ p.round_number }}</td>
+        <td>{{ p.contribute }}</td>
+        <td>{{ group.sum }}</td>
+        <td>{{ p.payoff }}</td>
+    </tr>
+    {% endfor %}
+</table>
+    {% next_button %}
+{% endblock %}

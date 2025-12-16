@@ -1,0 +1,18 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    General Introduction
+{% endblock %}
+
+{% block content %}
+<font size="+2">
+    <p>The experiment will consist <span style="color: red;"><strong>1 survey and 3 parts</strong></span>. You will first fill out a survey consists 36 questions and then do the rest of the experiment. The detailed instruction for each part will be given at the beginnings of them. </p>
+<p><br>Once you click the next button, you will enter into the survey. Keep in mind that all survey data will be confidential and we will, by no circumstances, disclose them to anyone who is not involved in this research.
+If you are ready, you can proceed to the survey by clicking the next button below.</p>
+    <br>
+    <br>
+    <br>
+    {% next_button %}
+
+{% endblock %}

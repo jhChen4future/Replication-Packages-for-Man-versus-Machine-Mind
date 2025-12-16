@@ -1,0 +1,88 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Role Assignment
+{% endblock %}
+
+{% block content %}
+    <script>
+        setTimeout(
+            function () {
+                alert("You have been on this page for 2 minutes now. If you have any further questions, please raise your hand to ask the observer. Otherwise, you can click the next button to proceed.");
+            },
+            120*1000 // 120 seconds
+        );
+    </script>
+<font size="+2">
+    <span>
+        {% if player.role == "Hunter 1" %}
+        You will be <span style="color: red;"><b>Hunter 1</b></span> for the entire experiment. Below is an example of the game matrix for you.
+            <div class="form-group required">
+                    <table class="table table-bordered text-center" style="width: auto; margin: auto">
+                        <tr>
+                            <th colspan="2" rowspan="2"></th>
+                            <th colspan="2"><i><span style="color: green;">Your Partner</span> </i></th>
+                        </tr>
+                        <tr>
+                            <th>Stag</th>
+                            <th>Hare</th>
+                        </tr>
+                        <tr>
+                            <th rowspan="2"><span style="color: red "><b>You</b></span></th>
+                            <th>Stag</th>
+                            <td><span style="color: red "><b>4</b></span>,
+                            <i><span style="color: green">4</span></i></td>
+                            <td><span style="color: red "><b>0</b></span>,
+                            <i><span style="color: green">{{group.hare_p2_payoff}}</span></i></td>
+                        </tr>
+                        <tr>
+                            <th>Hare</th>
+                            <td><span style="color: red "><b>1</b></span>,
+                            <i><span style="color: green">0</span></i></td>
+                            <td><span style="color: red "><b>1</b></span>,
+                            <i><span style="color: green">{{group.hare_p2_payoff}}</span></i></td>
+                            </tr>
+                    </table>
+            </div>
+
+        {% else %}
+        You will be <span style="color: green;"><i>Hunter 2</i></span> for the entire experiment. Below is an example of the game matrix for you.
+            <div class="form-group required">
+                <table class="table table-bordered text-center" style="width: auto; margin: auto">
+                    <tr>
+                        <th colspan="2" rowspan="2"></th>
+                        <th colspan="2"><i><span style="color: green;">You</span> </i></th>
+                    </tr>
+                    <tr>
+                        <th>Stag</th>
+                        <th>Hare</th>
+                    </tr>
+                    <tr>
+                        <th rowspan="2"><span style="color: red "><b>Your Partner</b></span></th>
+                        <th>Stag</th>
+                        <td><span style="color: red "><b>4</b></span>,
+                        <i><span style="color: green">4</span></i></td>
+                        <td><span style="color: red "><b>0</b></span>,
+                        <i><span style="color: green">{{group.hare_p2_payoff}}</span></i></td>
+                    </tr>
+                    <tr>
+                        <th>Hare</th>
+                        <td><span style="color: red "><b>1</b></span>,
+                        <i><span style="color: green">0</span></i></td>
+                        <td><span style="color: red "><b>1</b></span>,
+                        <i><span style="color: green">{{group.hare_p2_payoff}}</span></i></td>
+                        </tr>
+                </table>
+            </div>
+        {% endif %}
+    <br>
+    <br>If you click next button, the experiment will begin. As a reminder, you only have 20 seconds to make a choice each round.
+        Make sure you understand the game matrix before you click next button.
+    </p>
+
+    {% next_button %}
+
+
+
+{% endblock %}

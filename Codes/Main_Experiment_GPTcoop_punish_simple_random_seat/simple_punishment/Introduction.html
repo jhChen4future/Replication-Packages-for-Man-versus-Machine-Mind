@@ -1,0 +1,18 @@
+{{ extends 'global/Page.html' }}
+{{ block title }}游戏说明{{ endblock }}
+
+{{ block content }}
+
+
+{{ include Constants.INSTRUCTIONS_TEMPLATE }}
+<p>
+在所有人做出决策之后，将会公示本轮小组各个成员向公共账户中的投入数量
+（<b>每轮展示按投入数量排序，仅展示投入数量，不展示身份</b>)。
+</p>
+<p>
+最后会单独展示您在本轮中的最终收入
+</p>
+
+{{ next_button }}
+
+{{ endblock }}

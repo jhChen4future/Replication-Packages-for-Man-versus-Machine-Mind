@@ -1,0 +1,58 @@
+{{ extends 'global/Page.html' }}
+{{ block title }}提议者{{ endblock }}
+
+{{ block content }}
+
+
+<p>
+    您是提议者A，拥有 {{Constants.endowment}} 个初始点数。
+</p>
+
+<p>
+请输入您想分配多少点数给对方。
+</p>
+
+<p>
+    请记住，一旦对方拒绝了您的提议，双方的最终收益都为0
+</p>
+
+{{formfields}}
+
+<!-- 小按钮，用于显示图片 -->
+<button id="showButton" type="button" onclick="toggleImage()" style="padding: 10px 20px; font-size: 16px; z-index: 1001; position: relative; background-color: #4da6ff; color: white; border: none;">
+    点击显示游戏说明
+</button>
+
+<!-- 全屏图片和关闭按钮 -->
+<div id="imageOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: black; z-index: 1000;">
+    <img src="{{ static 'ultimatum/ultimatum.png' }}" style="width: 100%; height: 100%; object-fit: contain;" />
+    <!-- 关闭按钮 -->
+    <button type="button" onclick="toggleImage()" style="position: absolute; top: 20px; right: 20px; padding: 10px 20px; font-size: 16px; z-index: 1001; background-color: #4da6ff; color: white; border: none;">
+        关闭说明
+    </button>
+</div>
+
+<script>
+function toggleImage() {
+    const overlay = document.getElementById('imageOverlay');
+    const showButton = document.getElementById('showButton');
+    
+    // Toggle overlay visibility
+    if (overlay.style.display === 'none' || overlay.style.display === '') {
+        overlay.style.display = 'block';
+        showButton.style.display = 'none';  // 隐藏“显示图片”按钮
+    } else {
+        overlay.style.display = 'none';
+        showButton.style.display = 'inline-block';  // 显示“显示图片”按钮
+    }
+}
+</script>
+
+
+{{ next_button }}
+
+
+
+
+
+{{ endblock }}

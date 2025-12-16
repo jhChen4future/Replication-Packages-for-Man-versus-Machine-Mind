@@ -1,0 +1,51 @@
+{{ extends 'global/Page.html' }}
+{{ block title }}第{{player.round_number}}轮结果{{ endblock }}
+
+{{ block content }}
+
+
+{{if player.id_in_group == 1}}
+
+<p>
+	在第{{player.round_number}}轮中，您选择 {{group.Player_1_decision}}。
+</p>
+
+<p>
+	另一位玩家选择{{group.Player_2_decision}}。
+</p>
+
+<p>
+	您本轮的收入为{{player.R1_payoff}}点数。
+</p>
+
+<p>
+	本轮结束后的游戏总收入为{{player.Total_payoff}}点数。
+</p>
+
+{{endif}}
+
+{{if player.id_in_group == 2}}
+
+<p>
+	在第{{player.round_number}}轮中，您选择{{group.Player_2_decision}}.。
+</p>
+
+<p>
+	另一位玩家选择{{group.Player_1_decision}}。
+</p>
+
+<p>
+	您本轮的收入为{{player.R1_payoff}}。
+
+</p>
+
+<p>
+	本轮结束后的游戏总收入为{{player.Total_payoff}}。
+</p>
+
+{{endif}}
+
+
+{{ next_button }}
+
+{{ endblock }}
