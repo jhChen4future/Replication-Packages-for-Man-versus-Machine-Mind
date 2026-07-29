@@ -136,12 +136,16 @@ exploitation is difficult for the AI counterpart to punish.
 .
 ├── Paper/
 │   ├── Writing_sample_latest.pdf
+│   ├── CITATION.bib
 │   └── ReadME.md
 ├── Codes/
 │   ├── Main_Experiment_GPTcoop_punish_simple_random_seat/
+│   │   └── README.md
 │   ├── Auxiliary_Experiment/
+│   │   └── README.md
 │   └── ReadME.md
 └── Screenshots/
+    └── README.md
 ```
 
 - [`Paper/Writing_sample_latest.pdf`](./Paper/Writing_sample_latest.pdf) is the
@@ -149,12 +153,21 @@ exploitation is difficult for the AI counterpart to punish.
   *Humans versus Machine Mind: Bias and Strategic Adaptation in Human
   Interactions with AI*.
 - [`Codes/Main_Experiment_GPTcoop_punish_simple_random_seat/`](./Codes/Main_Experiment_GPTcoop_punish_simple_random_seat/)
-  contains the oTree programs used for the main experiment.
+  contains the oTree programs used for the main experiment; its
+  [experiment-level README](./Codes/Main_Experiment_GPTcoop_punish_simple_random_seat/README.md)
+  records the active sequence and archival boundaries.
 - [`Codes/Auxiliary_Experiment/`](./Codes/Auxiliary_Experiment/) contains the
   choice, belief-elicitation, and satisfaction tasks used in the auxiliary
-  experiment.
+  experiment; its
+  [experiment-level README](./Codes/Auxiliary_Experiment/README.md) explains
+  the within-block randomization.
 - [`Codes/ReadME.md`](./Codes/ReadME.md) records the historical software
-  environment and code notes.
+  environment, directory map, data status, and reuse cautions.
+- [`Paper/ReadME.md`](./Paper/ReadME.md) distinguishes the current project title
+  from the archival PDF title and provides manuscript status and citation
+  guidance.
+- [`Screenshots/README.md`](./Screenshots/README.md) documents why the current
+  2-byte `.pptx` files are only historical placeholders.
 - The checked-in SQLite files contain development or demonstration session
   state, not the complete analysis-ready dataset for the 119 participants.
 - The current `.pptx` files under `Screenshots/` are empty placeholders and
