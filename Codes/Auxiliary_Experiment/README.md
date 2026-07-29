@@ -62,7 +62,7 @@ in this setting remains uncertain.
 - interface language: Simplified Chinese
 - currency conversion: 0.25 CNY per point
 - participation fee in settings: 10 CNY
-- LLM used during collection: ChatGPT-4.1
+- LLM reported for collection: ChatGPT-4.1
 
 For a local demonstration:
 
@@ -73,9 +73,18 @@ For a local demonstration:
 
 The current `requirements.txt` does not encapsulate the historical
 botex/OpenAI runtime. A present-day model call should not be assumed to reproduce
-the collected ChatGPT behavior. The checked-in `SECRET_KEY` is a development
-placeholder, and some participant-facing Chinese strings appear to contain
-encoding damage; both require review before deployment.
+the collected ChatGPT behavior.
+
+There is also a version-label discrepancy in the archive: the manuscript and
+repository record ChatGPT-4.1 for the auxiliary collection, while
+`general_instruction/Instruction.html` still tells participants that the AI
+player is ChatGPT-4o. The historical interface file has been preserved. Any
+replication or audit should resolve the discrepancy against deployment logs
+rather than silently treating the two labels as equivalent.
+
+The checked-in `SECRET_KEY` is a development placeholder, and some
+participant-facing Chinese strings appear to contain encoding damage; both
+require review before deployment.
 
 ## Files and archival boundaries
 
