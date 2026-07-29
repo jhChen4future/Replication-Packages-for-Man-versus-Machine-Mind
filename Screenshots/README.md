@@ -12,6 +12,15 @@ documentation**.
 | `Auxiliary Experiments Screenshots CN.pptx` | 2 bytes | Empty placeholder; not a valid presentation |
 | `temp` | 2 bytes | Empty placeholder with no documented content |
 
+> [!NOTE]
+> I remember uploading the screenshot decks in 2025, but I do not know why the
+> files currently appear empty; I did not realize this until Codex helped me
+> reorganize this repository page. The original PPTX files are on another laptop
+> that I do not expect to use in the short term, so I am unlikely to re-upload
+> them soon. If you are especially curious or genuinely need the screenshots,
+> you can run the oTree programs or contact me directly—I will prioritize
+> retrieving them for you. 😄
+
 The placeholders were retained so that their historical names remain visible.
 They were not replaced with reconstructed slides because no original screenshot
 images or valid decks are present in this repository, and a reconstruction
