@@ -16,7 +16,7 @@ ending data collection under this design.
 | Directory | Collected protocol | Public sample | Model used during collection | Detailed notes |
 |---|---|---:|---|---|
 | [`Main_Experiment_GPTcoop_punish_simple_random_seat/`](./Main_Experiment_GPTcoop_punish_simple_random_seat/) | Trust, Ultimatum, eight indefinitely repeated Prisoner's Dilemma supergames, Dictator, Public Goods, risk and survey tasks | 84 | ChatGPT-4o-2024-11-20 | [README](./Main_Experiment_GPTcoop_punish_simple_random_seat/README.md) |
-| [`Auxiliary_Experiment/`](./Auxiliary_Experiment/) | Six blocks of sequential mini Ultimatum, Trust, and Prisoner's Dilemma tasks with choices, beliefs, and satisfaction measures | 35 | ChatGPT-4.1 | [README](./Auxiliary_Experiment/README.md) |
+| [`Auxiliary_Experiment/`](./Auxiliary_Experiment/) | Six blocks of sequential mini Ultimatum, Trust, and Prisoner's Dilemma tasks with choices, beliefs, and satisfaction measures | 35 | ChatGPT-4.1 reported; archived instruction text says ChatGPT-4o | [README](./Auxiliary_Experiment/README.md) |
 
 The active protocol in each directory is defined by its top-level
 `settings.py`. Other app folders may be prototypes, dependencies, copied
