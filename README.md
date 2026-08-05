@@ -189,21 +189,9 @@ exploitation is difficult for the AI counterpart to punish.
   data collection. Exact behavioral reproduction therefore cannot be assumed
   from the code alone.
 
-## Manuscript status and citation
-
-This is a working paper and has not been presented here as a journal
-publication. The manuscript used an AEA Word template for formatting
-convenience only; that does not imply submission to or endorsement by an AEA
-journal.
-
-Suggested working-paper citation:
-
-> Chen, Jinghao. "Strategic De-socialization: Experimental Evidence on Human
-> Interaction with Large Language Models." Working paper.
-
 ## Funding and contact
 
 This research was supported by an SRTP provincial undergraduate innovation
 research project and supplementary support from the supervisor. For questions,
-corrections, or suggestions, please use the contact information on
-[Jinghao Chen's personal website](https://jhchen4future.github.io/).
+corrections, suggestions, or citation requests, please contact
+[maximumc0729@gmail.com](mailto:maximumc0729@gmail.com).
