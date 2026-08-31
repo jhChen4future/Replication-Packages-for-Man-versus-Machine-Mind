@@ -149,9 +149,10 @@ exploitation is difficult for the AI counterpart to punish.
 ```
 
 - [`Paper/Writing_sample_latest.pdf`](./Paper/Writing_sample_latest.pdf) is the
-  current working-paper manuscript. Its title page retains the earlier title,
-  *Humans versus Machine Mind: Bias and Strategic Adaptation in Human
-  Interactions with AI*.
+  current English working-paper manuscript. The April revision was prepared for
+  a research conference, so its section headings were reformatted for the
+  presentation; apart from the section-heading treatment, it continues to use
+  the AEA template.
 - [`Codes/Main_Experiment_GPTcoop_punish_simple_random_seat/`](./Codes/Main_Experiment_GPTcoop_punish_simple_random_seat/)
   contains the oTree programs used for the main experiment; its
   [experiment-level README](./Codes/Main_Experiment_GPTcoop_punish_simple_random_seat/README.md)
