@@ -6,20 +6,16 @@ De-socialization**.
 ## Available file
 
 [`Writing_sample_latest.pdf`](./Writing_sample_latest.pdf) is the latest
-manuscript currently archived in this repository. Its title page retains the
-earlier project title:
+English working-paper manuscript currently archived in this repository.
 
-> *Humans versus Machine Mind: Bias and Strategic Adaptation in Human
-> Interactions with AI*
-
-The repository and personal project page now use **Strategic De-socialization:
-Experimental Evidence on Human Interaction with Large Language Models** as the
-public-facing title. The PDF has been preserved as an archival manuscript rather
-than edited in place without its original Word source.
+The April revision was formatted for presentation at a research conference, so
+the section-heading treatment differs from the standard manuscript template.
+Apart from those section headings, the paper continues to use the American
+Economic Association template.
 
 ## Status
 
-This is a working paper, not a journal publication. The manuscript used an
+This is a working paper, not a journal publication. The manuscript uses an
 [American Economic Association template](https://www.aeaweb.org/journals/templates)
 for Word-formatting convenience only. That does not indicate submission to,
 review by, acceptance at, or endorsement by an AEA journal.
